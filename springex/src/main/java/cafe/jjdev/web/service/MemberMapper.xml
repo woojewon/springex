@@ -9,6 +9,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="member_pw" property="memberPw"/>
 		<result column="member_name" property="memberName"/>
 	</resultMap>
+	
+	<insert id = "insertMember" parameterType="cafe.jjdev.web.service.Member">
+		INSERT INTO member
+		(
+			member_id
+			, member_pw
+			, member_name	
+		)
+		VALUES
+		(
+			#{memberId}
+			, #{memberPw}
+			, #{memberName}
+		)
+	</insert>
+	
 	<select id = "selectMemberOne" parameterType="int" resultMap="resultMember">
 		SELECT * FROM member 
 		WHERE member_no = #{memberNo}

@@ -12,10 +12,13 @@ import cafe.jjdev.web.service.*;
 public class MemberController {
 	@Autowired
 	private MemberDao memberDao;
+	@Autowired
+	private MemberService memberService;
+	
 	@RequestMapping(value = "/memberList")
 	public String memberList()
 	{
-		System.out.println("memberList");
+		System.out.println("memberList 요청...");
 		return "memberList";
 	}
 	
@@ -23,6 +26,7 @@ public class MemberController {
 	public String addMember(MemberRequest memberRequest)//커멘드객체로 변수를 받는 방법 한꺼번에
 	{
 		System.out.println(memberRequest);
+		memberDao.insertMember(member);
 		return "redirect:/memberList";//view 존재  response.sendRedirect("/memberList")// redirect/:를 붙여주면 스프링이 리다이렉트한다고 인식
 	}
 	
