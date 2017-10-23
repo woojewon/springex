@@ -11,8 +11,8 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="cafe.jjdev.web.service">
-		<level value="debug" />
+	<logger name="cafe.jjdev.web">
+		<level value="info" />
 	</logger>
 	
 	<!-- 3rdparty Loggers -->

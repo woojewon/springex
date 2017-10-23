@@ -29,4 +29,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM member 
 		WHERE member_no = #{memberNo}
 	</select>
+	
+	<select id = "selectMemberList" resultMap="resultMember">
+		SELECT member_no, member_id, member_name FROM member
+	</select>
 </mapper>
